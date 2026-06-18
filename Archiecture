@@ -1,0 +1,291 @@
+🧩 1. High‑Level System Diagram
+Code
+
+          ┌──────────────┐
+          │   Vosk WW     │
+          └──────┬───────┘
+                 │ (wake)
+                 ▼
+          ┌──────────────┐
+          │  Whisper STT  │
+          └──────┬───────┘
+                 │ text
+                 ▼
+          ┌──────────────┐
+          │  Router Agent │
+          └──────┬───────┘
+                 │ intent
+                 ▼
+          ┌──────────────┐
+          │ Planner Agent │
+          └──────┬───────┘
+                 │ plan
+                 ▼
+          ┌──────────────┐
+          │ Executor Agent│
+          └──────┬───────┘
+                 │ tool calls
+                 ▼
+          ┌──────────────┐
+          │   Tools/Skills│
+          └──────┬────────┘
+                 │ results
+                 ▼
+          ┌──────────────┐
+          │ Persona Agent │
+          └──────┬───────┘
+                 │ response text
+                 ▼
+          ┌──────────────┐
+          │  Piper TTS    │
+          └───────────────┘
+
+🧠 2. Agents (Multi‑Agent From Day One)
+Router Agent
+
+    Classifies intent
+
+    Chooses model tier (Phi‑3 Mini or Llama 3.1 8B)
+
+    Routes to Planner
+
+    Enforces ingestion‑only external calls
+
+Planner Agent
+
+    Breaks tasks into steps
+
+    Decides which tools/skills to use
+
+    Escalates to Llama 3.1 8B for complex tasks
+
+    Can request “heavy mode” manually
+
+Executor Agent
+
+    Validates tool schemas
+
+    Runs tools
+
+    Handles errors
+
+    Returns structured results
+
+Memory Agent
+
+    SQLite storage
+
+    Embeddings (MiniLM‑L6‑v2)
+
+    Workflow state
+
+    Semantic search
+
+Persona Agent
+
+    Formats responses
+
+    Adds tone
+
+    Prepares text for TTS
+
+🛠️ 3. Tools & Skills
+Core Tools
+
+    Writing tool
+
+    Editing tool
+
+    Formatting tool
+
+    File content search
+
+    Metadata tagging
+
+    Semantic search
+
+    Spotify playback control
+
+    Vibe classifier
+
+    Playlist generator
+
+    Ingestion‑only fetch tool (DuckDuckGo API or similar)
+
+    Calendar read/free‑time/scheduling
+
+    Math eval
+
+    File ops
+
+    Local KB
+
+Skills (Tool Bundles)
+
+    Writing Skill
+
+    File Search Skill
+
+    Spotify DJ Skill
+
+    Research Skill
+
+    Calendar Skill
+
+    Utility Skill
+
+🎤 4. Voice Pipeline
+Wake‑Word
+
+    Vosk listens continuously
+
+    Low CPU overhead
+
+Speech‑to‑Text
+
+    Whisper (tiny or base)
+
+    Converts audio → text
+
+    Sends text directly to Router Agent
+
+Text‑to‑Speech
+
+    Piper TTS
+
+    Fast streaming
+
+    Ideal for “JARVIS‑snappy” responses
+
+⚡ 5. Model Tiers (Ollama)
+Tier 1 — Fast Model (Default)
+
+Phi‑3 Mini (3.8B)  
+Used for:
+
+    Router
+
+    Simple planning
+
+    Persona
+
+    Voice mode
+
+    Quick Q&A
+
+Tier 2 — Medium Model (Local Heavy Mode)
+
+Llama 3.1 8B Instruct  
+Used for:
+
+    Complex planning
+
+    Research synthesis
+
+    Coding workflows
+
+    Multi‑step reasoning
+
+Embedding Model
+
+all‑MiniLM‑L6‑v2  
+Used for:
+
+    Semantic search
+
+    Memory
+
+    File retrieval
+
+🔄 6. Data Flow Loops
+Voice Loop
+
+    Vosk detects wake‑word
+
+    Whisper transcribes
+
+    Router interprets
+
+    Planner decomposes
+
+    Executor runs tools
+
+    Persona formats
+
+    Piper speaks
+
+Text Loop
+
+    User types
+
+    Router interprets
+
+    Planner decomposes
+
+    Executor runs tools
+
+    Persona formats
+
+    Return text
+
+Research Loop
+
+    Planner identifies research task
+
+    Executor calls ingestion‑only fetch tool
+
+    Research Skill extracts citations
+
+    Planner synthesizes
+
+    Persona formats
+
+File Search Loop
+
+    Query → embedding
+
+    SQLite vector search
+
+    Ranked results returned
+
+    Persona formats
+
+🧱 7. Storage & Memory
+SQLite
+
+    Short‑term memory
+
+    Long‑term memory
+
+    Workflow state
+
+    File metadata
+
+    Embeddings
+
+Embeddings
+
+    MiniLM‑L6‑v2
+
+    Stored in SQLite
+
+    Used for semantic search
+
+🧩 8. Security Model
+Ingestion‑Only External Calls
+
+    Only GET
+
+    Only whitelisted domains
+
+    No personal data
+
+    Logged for transparency
+
+Local‑Only Execution
+
+    All LLMs local
+
+    All tools local
+
+    All memory local
