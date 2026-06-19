@@ -1,0 +1,23 @@
+models:
+  default: small
+  tiers:
+    small: phi-3-mini
+    large: llama-3.1-8b
+paths:
+  data_dir: data
+  cache_dir: .cache
+  log_dir: logs
+security:
+  allowed_tools:
+    router: [intent_classifier]
+    planner: [task_planner, calendar]
+    executor: [shell, filesystem]
+    memory: [sqlite]
+    persona: []
+voice:
+  default_voice: alloy
+  tts_engine: piper
+  stt_engine: whisper
+timeouts:
+  model_call_seconds: 30
+
