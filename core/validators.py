@@ -5,7 +5,21 @@ from .errors import Result, AgentError, Success, Failure
 from .schema import AgentMessage
 from .types import ALLOWED_ROUTES
 
-MESSAGE_TYPES = ["task_request", "plan", "execution_result", "memory_op", "error"]
+MESSAGE_TYPES = [
+    # canonical envelope types
+    "task_request", "plan", "execution_result", "memory_op", "error",
+    # agent pipeline types (dot-notation)
+    "task.routing", "plan.created", "execution.completed", "memory.response", "persona.enriched",
+]
+
+# Maps dot-notation pipeline types to their canonical validation category.
+_TYPE_CANONICAL: dict = {
+    "task.routing": "task_request",
+    "plan.created": "plan",
+    "execution.completed": "execution_result",
+    "memory.response": "memory_op",
+    "persona.enriched": "execution_result",
+}
 
 
 def validate_required_fields(data: Dict[str, Any], required: list) -> Result[Dict[str, Any], AgentError]:
@@ -59,23 +73,26 @@ def validate_message_type(msg_type: str, source: str, target: str) -> Result[str
 
 
 def validate_payload_structure(msg_type: str, payload: Any) -> Result[Any, AgentError]:
+    canonical = _TYPE_CANONICAL.get(msg_type, msg_type)
+
     def get(field: str):
         if isinstance(payload, dict):
             return payload.get(field)
         return getattr(payload, field, None)
-    if msg_type == "task_request":
+
+    if canonical == "task_request":
         if not get("user_intent") or not get("selected_model"):
             return Failure(AgentError("ValidationError", "Invalid payload"))
-    elif msg_type == "plan":
+    elif canonical == "plan":
         if not get("steps"):
             return Failure(AgentError("ValidationError", "Invalid payload"))
-    elif msg_type == "execution_result":
+    elif canonical == "execution_result":
         if get("results") is None:
             return Failure(AgentError("ValidationError", "Invalid payload"))
-    elif msg_type == "memory_op":
+    elif canonical == "memory_op":
         if not get("operation") or not get("namespace"):
             return Failure(AgentError("ValidationError", "Invalid payload"))
-    elif msg_type == "error":
+    elif canonical == "error":
         if not get("error_type") or not get("message"):
             return Failure(AgentError("ValidationError", "Invalid payload"))
     else:

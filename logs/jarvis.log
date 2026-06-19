@@ -1,0 +1,19 @@
+2026-06-19T14:29:01 INFO     jarvis               LocalJarvis starting up
+2026-06-19T14:29:01 WARNING  core.registry        Attribute injection failed for agent 'memory': [Errno 17] File exists: 'data'
+2026-06-19T14:29:01 DEBUG    jarvis               Pipeline start | input='hello world'
+2026-06-19T14:29:01 DEBUG    jarvis               Router selected model: phi-3-mini
+2026-06-19T14:29:01 DEBUG    jarvis               Planner produced 1 step(s)
+2026-06-19T14:29:01 DEBUG    jarvis               Executor finished
+2026-06-19T14:29:01 DEBUG    jarvis               Pipeline end
+2026-06-19T14:29:42 INFO     jarvis               LocalJarvis starting up
+2026-06-19T14:29:42 DEBUG    jarvis               Pipeline start | input='hello world'
+2026-06-19T14:29:42 DEBUG    jarvis               Router selected model: phi-3-mini
+2026-06-19T14:29:42 DEBUG    jarvis               Planner produced 1 step(s)
+2026-06-19T14:29:42 DEBUG    jarvis               Executor finished
+2026-06-19T14:29:42 DEBUG    jarvis               Pipeline end
+2026-06-19T14:29:42 INFO     jarvis               LocalJarvis starting up
+2026-06-19T14:29:42 DEBUG    jarvis               Pipeline start | input='write me a research summary on AI'
+2026-06-19T14:29:42 DEBUG    jarvis               Router selected model: llama-3.1-8b
+2026-06-19T14:29:42 DEBUG    jarvis               Planner produced 1 step(s)
+2026-06-19T14:29:42 DEBUG    jarvis               Executor finished
+2026-06-19T14:29:42 DEBUG    jarvis               Pipeline end

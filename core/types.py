@@ -1,7 +1,12 @@
 from typing import Literal, Dict, Set
 from uuid import UUID
 
-MessageType = Literal["task_request", "plan", "execution_result", "memory_op", "error"]
+MessageType = Literal[
+    # canonical envelope types
+    "task_request", "plan", "execution_result", "memory_op", "error",
+    # agent pipeline types (dot-notation)
+    "task.routing", "plan.created", "execution.completed", "memory.response", "persona.enriched",
+]
 AgentName = Literal["router", "planner", "executor", "persona", "memory"]
 ActionType = Literal["memory_search", "model_inference", "tool_call"]
 OperationType = Literal["write", "search", "read", "delete"]

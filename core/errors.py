@@ -24,7 +24,13 @@ class AgentError(Exception):
         recoverable: bool = False,
         details: Optional[Dict[str, Any]] = None,
     ):
-        pass
+        super().__init__(message)
+        self.error_type = error_type
+        self.message = message
+        self.agent = agent
+        self.step_id = step_id
+        self.recoverable = recoverable
+        self.details = details or {}
 
 class ToolFailure(AgentError):
     pass

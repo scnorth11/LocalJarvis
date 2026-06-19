@@ -4,7 +4,7 @@ from core.schema import AgentMessage, PlanPayload, PlanStep, TaskPayload
 
 
 class PlannerAgent:
-    name = "planner_agent"
+    name = "planner"
 
     def __init__(self) -> None:
         self.config = None
@@ -36,7 +36,7 @@ class PlannerAgent:
             id=message.id,
             timestamp=message.timestamp,
             source=self.name,
-            target="executor_agent",
+            target="executor",
             type="plan.created",
             payload=plan_payload,
             metadata=message.metadata,

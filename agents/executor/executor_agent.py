@@ -4,7 +4,7 @@ from core.schema import AgentMessage, ExecutionResult, PlanPayload
 
 
 class ExecutorAgent:
-    name = "executor_agent"
+    name = "executor"
 
     def __init__(self) -> None:
         self.config = None
@@ -34,7 +34,7 @@ class ExecutorAgent:
             id=message.id,
             timestamp=message.timestamp,
             source=self.name,
-            target="persona_agent",
+            target="persona",
             type="execution.completed",
             payload=execution_result,
             metadata=message.metadata,

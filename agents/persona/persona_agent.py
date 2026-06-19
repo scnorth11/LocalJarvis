@@ -4,7 +4,7 @@ from core.schema import AgentMessage, ExecutionResult
 
 
 class PersonaAgent:
-    name = "persona_agent"
+    name = "persona"
 
     def __init__(self) -> None:
         self.config = None
@@ -23,7 +23,7 @@ class PersonaAgent:
         if not isinstance(message.payload, ExecutionResult):
             raise TypeError("PersonaAgent expects ExecutionResult in message.payload")
 
-        voice_style = getattr(self.config.voice, "default_style", "neutral")
+        voice_style = getattr(self.config.voice, "default_voice", "neutral")
         enriched_text = f"[{voice_style}] {message.payload.final_output}"
 
         enriched_result = ExecutionResult(
@@ -35,7 +35,7 @@ class PersonaAgent:
             id=message.id,
             timestamp=message.timestamp,
             source=self.name,
-            target="output",
+            target="router",
             type="persona.enriched",
             payload=enriched_result,
             metadata=message.metadata,

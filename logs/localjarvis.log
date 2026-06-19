@@ -1,0 +1,93 @@
+[2026-06-19 11:35:12] config.loader - INFO - Logging initialized from config
+[2026-06-19 11:35:12] __main__ - INFO - LocalJarvis starting...
+[2026-06-19 11:35:12] __main__ - INFO - Configuration loaded
+[2026-06-19 11:35:12] __main__ - INFO - Setting up agents...
+[2026-06-19 11:35:12] __main__ - CRITICAL - Fatal error: 'SecurityConfig' object has no attribute 'security'
+Traceback (most recent call last):
+  File "/home/steven/Projects/LocalJarvis/main.py", line 200, in main
+    await setup_agents(config, registry)
+  File "/home/steven/Projects/LocalJarvis/main.py", line 58, in setup_agents
+    capability_map = build_capability_map(config.security)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/steven/Projects/LocalJarvis/security/capabilities.py", line 9, in build_capability_map
+    return {agent: set(tools) for agent, tools in app_config.security.allowed_tools.items()}
+                                                  ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SecurityConfig' object has no attribute 'security'
+[2026-06-19 11:35:55] config.loader - INFO - Logging initialized from config
+[2026-06-19 11:35:55] __main__ - INFO - LocalJarvis starting...
+[2026-06-19 11:35:55] __main__ - INFO - Configuration loaded
+[2026-06-19 11:35:55] __main__ - INFO - Setting up agents...
+[2026-06-19 11:35:55] __main__ - INFO - Security enforcer initialized
+[2026-06-19 11:35:55] agents.router_agent - DEBUG - Agent router_agent instantiated
+[2026-06-19 11:35:55] agents.planner_agent - DEBUG - Agent planner_agent instantiated
+[2026-06-19 11:35:55] agents.executor_agent - DEBUG - Agent executor_agent instantiated
+[2026-06-19 11:35:55] agents.memory_agent - DEBUG - Agent memory_agent instantiated
+[2026-06-19 11:35:55] agents.persona_agent - DEBUG - Agent persona_agent instantiated
+[2026-06-19 11:35:55] agents.router_agent - INFO - Agent router_agent initialized successfully
+[2026-06-19 11:35:55] __main__ - INFO - Agent router_agent initialized and registered
+[2026-06-19 11:35:55] agents.planner_agent - INFO - Agent planner_agent initialized successfully
+[2026-06-19 11:35:55] __main__ - INFO - Agent planner_agent initialized and registered
+[2026-06-19 11:35:55] agents.executor_agent - INFO - Agent executor_agent initialized successfully
+[2026-06-19 11:35:55] __main__ - INFO - Agent executor_agent initialized and registered
+[2026-06-19 11:35:55] agents.memory_agent - INFO - Agent memory_agent initialized successfully
+[2026-06-19 11:35:55] memory.sqlite_store - DEBUG - SQLiteMemoryStore initialized with path: data
+[2026-06-19 11:35:55] memory.sqlite_store - INFO - SQLite database initialized at data
+[2026-06-19 11:35:55] agents.memory_agent - INFO - SQLite memory store initialized at data
+[2026-06-19 11:35:55] __main__ - INFO - Agent memory_agent initialized and registered
+[2026-06-19 11:35:55] agents.persona_agent - INFO - Agent persona_agent initialized successfully
+[2026-06-19 11:35:55] agents.persona_agent - INFO - Initializing TTS engine: piper
+[2026-06-19 11:35:55] __main__ - INFO - Agent persona_agent initialized and registered
+[2026-06-19 11:35:55] __main__ - INFO - All agents initialized and registered successfully
+[2026-06-19 11:35:55] __main__ - INFO - Processing sample task...
+[2026-06-19 11:35:55] __main__ - INFO - Processing task: What is the capital of France?
+[2026-06-19 11:35:55] __main__ - DEBUG - Created initial message: d8760924-4af8-48fa-9481-141200127c18
+[2026-06-19 11:35:55] __main__ - DEBUG - Dispatching to router_agent
+[2026-06-19 11:35:55] __main__ - ERROR - Router failed: ('ValidationError', 'Timestamp out of range')
+[2026-06-19 11:35:55] __main__ - INFO - Result: Error in router: ('ValidationError', 'Timestamp out of range')
+[2026-06-19 11:35:55] __main__ - INFO - Shutting down agents...
+[2026-06-19 11:35:55] agents.router_agent - INFO - Agent router_agent shutdown successfully
+[2026-06-19 11:35:55] agents.planner_agent - INFO - Agent planner_agent shutdown successfully
+[2026-06-19 11:35:55] agents.executor_agent - INFO - Agent executor_agent shutdown successfully
+[2026-06-19 11:35:55] memory.sqlite_store - INFO - SQLite connection closed
+[2026-06-19 11:35:55] agents.memory_agent - INFO - Agent memory_agent shutdown successfully
+[2026-06-19 11:35:55] agents.persona_agent - INFO - Agent persona_agent shutdown successfully
+[2026-06-19 11:35:55] __main__ - INFO - LocalJarvis shutdown complete
+[2026-06-19 11:36:33] config.loader - INFO - Logging initialized from config
+[2026-06-19 11:36:33] __main__ - INFO - LocalJarvis starting...
+[2026-06-19 11:36:33] __main__ - INFO - Configuration loaded
+[2026-06-19 11:36:33] __main__ - INFO - Setting up agents...
+[2026-06-19 11:36:33] __main__ - INFO - Security enforcer initialized
+[2026-06-19 11:36:33] agents.router_agent - DEBUG - Agent router_agent instantiated
+[2026-06-19 11:36:33] agents.planner_agent - DEBUG - Agent planner_agent instantiated
+[2026-06-19 11:36:33] agents.executor_agent - DEBUG - Agent executor_agent instantiated
+[2026-06-19 11:36:33] agents.memory_agent - DEBUG - Agent memory_agent instantiated
+[2026-06-19 11:36:33] agents.persona_agent - DEBUG - Agent persona_agent instantiated
+[2026-06-19 11:36:33] agents.router_agent - INFO - Agent router_agent initialized successfully
+[2026-06-19 11:36:33] __main__ - INFO - Agent router_agent initialized and registered
+[2026-06-19 11:36:33] agents.planner_agent - INFO - Agent planner_agent initialized successfully
+[2026-06-19 11:36:33] __main__ - INFO - Agent planner_agent initialized and registered
+[2026-06-19 11:36:33] agents.executor_agent - INFO - Agent executor_agent initialized successfully
+[2026-06-19 11:36:33] __main__ - INFO - Agent executor_agent initialized and registered
+[2026-06-19 11:36:33] agents.memory_agent - INFO - Agent memory_agent initialized successfully
+[2026-06-19 11:36:33] memory.sqlite_store - DEBUG - SQLiteMemoryStore initialized with path: data
+[2026-06-19 11:36:33] memory.sqlite_store - INFO - SQLite database initialized at data
+[2026-06-19 11:36:33] agents.memory_agent - INFO - SQLite memory store initialized at data
+[2026-06-19 11:36:33] __main__ - INFO - Agent memory_agent initialized and registered
+[2026-06-19 11:36:33] agents.persona_agent - INFO - Agent persona_agent initialized successfully
+[2026-06-19 11:36:33] agents.persona_agent - INFO - Initializing TTS engine: piper
+[2026-06-19 11:36:33] __main__ - INFO - Agent persona_agent initialized and registered
+[2026-06-19 11:36:33] __main__ - INFO - All agents initialized and registered successfully
+[2026-06-19 11:36:33] __main__ - INFO - Processing sample task...
+[2026-06-19 11:36:33] __main__ - INFO - Processing task: What is the capital of France?
+[2026-06-19 11:36:33] __main__ - DEBUG - Created initial message: 4f0ef6b3-93fd-4989-83d2-907518e7731f
+[2026-06-19 11:36:33] __main__ - DEBUG - Dispatching to router_agent
+[2026-06-19 11:36:33] __main__ - ERROR - Router failed: ('ValidationError', 'Invalid metadata')
+[2026-06-19 11:36:33] __main__ - INFO - Result: Error in router: ('ValidationError', 'Invalid metadata')
+[2026-06-19 11:36:33] __main__ - INFO - Shutting down agents...
+[2026-06-19 11:36:33] agents.router_agent - INFO - Agent router_agent shutdown successfully
+[2026-06-19 11:36:33] agents.planner_agent - INFO - Agent planner_agent shutdown successfully
+[2026-06-19 11:36:33] agents.executor_agent - INFO - Agent executor_agent shutdown successfully
+[2026-06-19 11:36:33] memory.sqlite_store - INFO - SQLite connection closed
+[2026-06-19 11:36:33] agents.memory_agent - INFO - Agent memory_agent shutdown successfully
+[2026-06-19 11:36:33] agents.persona_agent - INFO - Agent persona_agent shutdown successfully
+[2026-06-19 11:36:33] __main__ - INFO - LocalJarvis shutdown complete

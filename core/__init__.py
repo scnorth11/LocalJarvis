@@ -14,7 +14,7 @@ from .serialization import (
     payload_to_dict, dict_to_payload, roundtrip_dict, roundtrip_json
 )
 from .agent import Agent
-from .registry import AgentRegistry
+from .registry import AgentContract, AgentRecord, AgentProxy, AgentRegistry
 
 __all__ = [
     "Success", "Failure", "Result", "AgentError", "ToolFailure", "ModelError",
@@ -27,5 +27,5 @@ __all__ = [
     "validate_enum", "validate_required_fields",
     "AgentMessageEncoder", "to_dict", "to_json", "from_dict", "from_json",
     "payload_to_dict", "dict_to_payload", "roundtrip_dict", "roundtrip_json",
-    "Agent", "AgentRegistry",
+    "Agent", "AgentContract", "AgentRecord", "AgentProxy", "AgentRegistry",
 ]
