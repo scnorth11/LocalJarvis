@@ -11,13 +11,50 @@ security:
   allowed_tools:
     router: [intent_classifier]
     planner: [task_planner, calendar]
-    executor: [shell, filesystem]
+    executor: [writing, file_search, research, math, file_ops, calendar, spotify]
     memory: [sqlite]
     persona: []
 voice:
   default_voice: alloy
   tts_engine: piper
   stt_engine: whisper
+  # Piper voice model — provide the full path to the .onnx file or just the
+  # model stem if it is on the piper binary's search path.
+  piper_voice: en_GB-alan-medium.onnx
+  # Path to the Vosk model directory (relative to project root or absolute).
+  vosk_model_path: vosk-model-small-en-us-0.15
+  # Wake phrase recognised by Vosk.
+  wake_phrase: jarvis
+  # Whisper model size: tiny | base | small | medium | large
+  whisper_model: base
+  # Voice trigger mode: wake_word | ptt | hybrid
+  voice_mode: hybrid
+  # Push-to-talk key name (pynput Key name, e.g. f12, shift, space)
+  ptt_key: f12
 timeouts:
   model_call_seconds: 30
+
+ollama:
+  base_url: http://localhost:11434
+  # Maps config tier names to Ollama model identifiers.
+  model_names:
+    phi-3-mini: phi3:mini
+    llama-3.1-8b: llama3.1:8b
+
+tools:
+  file:
+    allowed_paths:
+      - data
+  calendar:
+    db_path: data/calendar.db
+  research:
+    max_results: 10
+    source_guidance: ""
+  spotify:
+    # Credentials are read from env vars at runtime.
+    # SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN
+    client_id: ""
+    client_secret: ""
+    refresh_token: ""
+    redirect_uri: "http://127.0.0.1:8888/callback"
 

@@ -81,7 +81,11 @@ def validate_payload_structure(msg_type: str, payload: Any) -> Result[Any, Agent
         return getattr(payload, field, None)
 
     if canonical == "task_request":
-        if not get("user_intent") or not get("selected_model"):
+        # task.routing (post-router) must have a model selected; the initial
+        # task_request envelope only requires user_intent.
+        if not get("user_intent"):
+            return Failure(AgentError("ValidationError", "Invalid payload"))
+        if msg_type == "task.routing" and not get("selected_model"):
             return Failure(AgentError("ValidationError", "Invalid payload"))
     elif canonical == "plan":
         if not get("steps"):

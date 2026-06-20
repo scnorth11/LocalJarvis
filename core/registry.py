@@ -129,6 +129,35 @@ class AgentRegistry:
             raise KeyError(f"Agent not registered: {name}")
         return AgentProxy(rec)
 
+    async def route(self, message: Any) -> Any:
+        """Dispatch *message* to the agent named in ``message.target``.
+
+        Validates the source → target combination against
+        :data:`~core.types.ALLOWED_ROUTES` before dispatching.  Raises
+        :exc:`ValueError` for unauthorised routes and :exc:`KeyError` when
+        the target agent is not registered.
+
+        Parameters
+        ----------
+        message:
+            An :class:`~core.schema.AgentMessage` (or any object with
+            ``source`` and ``target`` string attributes).
+        """
+        from core.types import ALLOWED_ROUTES
+
+        source = getattr(message, "source", None)
+        target = getattr(message, "target", None)
+
+        if source is not None and target is not None:
+            allowed_targets = ALLOWED_ROUTES.get(source, set())
+            if allowed_targets and target not in allowed_targets:
+                raise ValueError(
+                    f"Routing not allowed: {source!r} → {target!r}. "
+                    f"Allowed targets for {source!r}: {sorted(allowed_targets)}"
+                )
+
+        return await self.get(target).handle(message)
+
     def list_agents(self) -> list:
         return list(self._agents.keys())
 

@@ -1,7 +1,7 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List
 
-from .schema import AppConfig, ModelsConfig, PathsConfig, VoiceConfig
+from .schema import AppConfig, ModelsConfig, OllamaConfig, PathsConfig, VoiceConfig
 
 
 @dataclass(frozen=True)
@@ -10,6 +10,7 @@ class RestrictedConfig:
     paths: PathsConfig
     voice: VoiceConfig
     allowed_tools: List[str]
+    ollama: OllamaConfig = field(default_factory=lambda: OllamaConfig.from_dict({}))
 
 
 class Config:
@@ -20,7 +21,14 @@ class Config:
         self.voice = app_config.voice
         self.security = app_config.security
         self.timeouts = app_config.timeouts
+        self.ollama = app_config.ollama
 
     def for_agent(self, agent_name: str) -> RestrictedConfig:
         allowed = self._app.security.allowed_tools.get(agent_name, [])
-        return RestrictedConfig(models=self.models, paths=self.paths, voice=self.voice, allowed_tools=list(allowed))
+        return RestrictedConfig(
+            models=self.models,
+            paths=self.paths,
+            voice=self.voice,
+            allowed_tools=list(allowed),
+            ollama=self.ollama,
+        )

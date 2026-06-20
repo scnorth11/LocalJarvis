@@ -17,3 +17,241 @@
 2026-06-19T14:29:42 DEBUG    jarvis               Planner produced 1 step(s)
 2026-06-19T14:29:42 DEBUG    jarvis               Executor finished
 2026-06-19T14:29:42 DEBUG    jarvis               Pipeline end
+2026-06-20T07:15:16 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T07:15:16 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T07:15:16 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T07:15:16 INFO     agents.planner.planner_agent Planner: 2 step(s) for tier=large
+2026-06-20T07:15:25 INFO     jarvis               LocalJarvis starting up
+2026-06-20T07:15:25 DEBUG    jarvis               Pipeline start | input='what time is it'
+2026-06-20T07:15:25 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T07:15:25 DEBUG    jarvis               Router returned: type=task.routing
+2026-06-20T07:15:25 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T07:15:25 DEBUG    jarvis               Planner produced 1 step(s)
+2026-06-20T07:15:25 DEBUG    jarvis               Executor finished: type=execution.completed
+2026-06-20T07:15:25 DEBUG    jarvis               Pipeline end
+2026-06-20T07:15:25 INFO     jarvis               LocalJarvis starting up
+2026-06-20T07:15:25 DEBUG    jarvis               Pipeline start | input='write a Python class to parse JSON'
+2026-06-20T07:15:25 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T07:15:25 DEBUG    jarvis               Router returned: type=task.routing
+2026-06-20T07:15:25 INFO     agents.planner.planner_agent Planner: 2 step(s) for tier=large
+2026-06-20T07:15:25 DEBUG    jarvis               Planner produced 2 step(s)
+2026-06-20T07:15:25 DEBUG    jarvis               Executor finished: type=execution.completed
+2026-06-20T07:15:25 DEBUG    jarvis               Pipeline end
+2026-06-20T07:36:07 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T07:36:07 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T07:36:07 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T07:36:07 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T07:36:07 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T07:36:07 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T07:36:07 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T07:36:07 ERROR    agents.router.router_agent RouterAgent error: ValidationError — RouterAgent expects TaskPayload
+2026-06-20T07:36:07 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T07:36:07 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T07:36:07 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T07:36:07 WARNING  agents.executor.executor_agent Executor: step step-bad failed (ToolFailure): Unknown step action: 'nonexistent_action'
+2026-06-20T07:36:07 ERROR    agents.memory_agent.memory_agent MemoryAgent error: ValidationError — Unsupported memory operation: 'explode'
+2026-06-20T07:36:07 WARNING  agents.persona.persona_agent PersonaAgent: surfacing upstream error [ToolFailure]: tool X failed
+2026-06-20T07:36:07 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T07:36:07 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T07:36:07 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T07:36:07 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T07:36:07 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:10:38 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:10:38 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:10:38 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:10:38 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:10:38 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:10:38 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:10:38 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:10:38 ERROR    core.agent           router error: ValidationError — RouterAgent expects TaskPayload
+2026-06-20T08:10:38 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:10:38 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:10:38 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:10:38 WARNING  agents.executor.executor_agent Executor: step step-bad failed (ToolFailure): Unknown step action: 'nonexistent_action'
+2026-06-20T08:10:38 ERROR    agents.memory_agent.memory_agent MemoryAgent error: ValidationError — Unsupported memory operation: 'explode'
+2026-06-20T08:10:38 WARNING  agents.persona.persona_agent PersonaAgent: surfacing upstream error [ToolFailure]: tool X failed
+2026-06-20T08:10:38 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:10:38 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:10:38 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:10:38 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:10:38 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:10:38 WARNING  tools.utility.math_tool MathTool failed to evaluate 'import os; os.system('id')': Sympify of expression 'could not parse "import os; os.system('id')"' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2026-06-20T08:10:38 WARNING  tools.spotify.spotify_tool SpotifyTool: missing credentials (SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET / SPOTIFY_REFRESH_TOKEN)
+2026-06-20T08:10:38 INFO     agents.planner.planner_agent Planner: 2 step(s) for tier=small
+2026-06-20T08:11:14 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:11:14 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:11:14 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:11:21 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:11:21 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:11:21 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:11:21 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:11:21 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:11:21 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:11:21 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:11:21 ERROR    core.agent           router error: ValidationError — RouterAgent expects TaskPayload
+2026-06-20T08:11:21 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:11:21 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:11:21 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:11:21 WARNING  agents.executor.executor_agent Executor: step step-bad failed (ToolFailure): Unknown step action: 'nonexistent_action'
+2026-06-20T08:11:21 ERROR    agents.memory_agent.memory_agent MemoryAgent error: ValidationError — Unsupported memory operation: 'explode'
+2026-06-20T08:11:21 WARNING  agents.persona.persona_agent PersonaAgent: surfacing upstream error [ToolFailure]: tool X failed
+2026-06-20T08:11:21 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:11:21 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:11:21 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:11:21 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:11:21 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:11:21 WARNING  tools.utility.math_tool MathTool failed to evaluate 'import os; os.system('id')': Sympify of expression 'could not parse "import os; os.system('id')"' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2026-06-20T08:11:21 WARNING  tools.spotify.spotify_tool SpotifyTool: missing credentials (SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET / SPOTIFY_REFRESH_TOKEN)
+2026-06-20T08:11:21 INFO     agents.planner.planner_agent Planner: 2 step(s) for tier=small
+2026-06-20T08:26:36 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:26:36 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:26:36 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:26:37 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:26:37 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:26:37 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:26:37 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:26:37 WARNING  tools.utility.math_tool MathTool failed to evaluate 'import os; os.system('id')': Sympify of expression 'could not parse "import os; os.system('id')"' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2026-06-20T08:26:37 WARNING  tools.spotify.spotify_tool SpotifyTool: missing credentials (SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET / SPOTIFY_REFRESH_TOKEN)
+2026-06-20T08:26:37 INFO     agents.planner.planner_agent Planner: 2 step(s) for tier=small
+2026-06-20T08:26:57 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:26:57 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:26:57 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:26:57 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:26:57 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:26:57 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:26:58 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:26:58 WARNING  tools.utility.math_tool MathTool failed to evaluate 'import os; os.system('id')': Sympify of expression 'could not parse "import os; os.system('id')"' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2026-06-20T08:26:58 WARNING  tools.spotify.spotify_tool SpotifyTool: missing credentials (SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET / SPOTIFY_REFRESH_TOKEN)
+2026-06-20T08:27:20 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:27:20 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:27:20 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:27:21 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:27:21 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:27:21 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:27:21 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:27:21 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:27:21 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:27:21 ERROR    core.agent           router error: ValidationError — RouterAgent expects TaskPayload
+2026-06-20T08:27:21 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:27:21 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:27:21 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:27:21 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:27:21 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:27:21 WARNING  agents.executor.executor_agent Executor: step step-bad failed (ToolFailure): Unknown step action: 'nonexistent_action'
+2026-06-20T08:27:21 ERROR    agents.memory_agent.memory_agent MemoryAgent error: ValidationError — Unsupported memory operation: 'explode'
+2026-06-20T08:27:21 WARNING  agents.persona.persona_agent PersonaAgent: surfacing upstream error [ToolFailure]: tool X failed
+2026-06-20T08:27:21 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:27:21 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:27:21 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:27:21 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:27:21 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:27:21 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:27:21 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:27:21 WARNING  tools.utility.math_tool MathTool failed to evaluate 'import os; os.system('id')': Sympify of expression 'could not parse "import os; os.system('id')"' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2026-06-20T08:27:22 WARNING  tools.spotify.spotify_tool SpotifyTool: missing credentials (SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET / SPOTIFY_REFRESH_TOKEN)
+2026-06-20T08:27:22 INFO     agents.planner.planner_agent Planner: 2 step(s) for tier=small
+2026-06-20T08:28:03 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:28:03 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:28:03 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:28:03 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:28:03 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:28:03 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:28:03 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:28:03 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:28:03 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:28:03 ERROR    core.agent           router error: ValidationError — RouterAgent expects TaskPayload
+2026-06-20T08:28:03 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:28:03 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:28:03 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:28:04 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:28:04 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:28:04 WARNING  agents.executor.executor_agent Executor: step step-bad failed (ToolFailure): Unknown step action: 'nonexistent_action'
+2026-06-20T08:28:04 ERROR    agents.memory_agent.memory_agent MemoryAgent error: ValidationError — Unsupported memory operation: 'explode'
+2026-06-20T08:28:04 WARNING  agents.persona.persona_agent PersonaAgent: surfacing upstream error [ToolFailure]: tool X failed
+2026-06-20T08:28:04 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:28:04 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:28:04 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:28:04 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:28:04 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:28:04 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:28:04 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:28:04 WARNING  tools.utility.math_tool MathTool failed to evaluate 'import os; os.system('id')': Sympify of expression 'could not parse "import os; os.system('id')"' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2026-06-20T08:28:04 WARNING  tools.spotify.spotify_tool SpotifyTool: missing credentials (SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET / SPOTIFY_REFRESH_TOKEN)
+2026-06-20T08:28:04 INFO     agents.planner.planner_agent Planner: 2 step(s) for tier=small
+2026-06-20T08:34:58 INFO     jarvis               LocalJarvis starting up
+2026-06-20T08:34:58 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:34:58 INFO     workflows.engine     WorkflowEngine: database ready at data/workflows.db
+2026-06-20T08:34:58 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:34:58 DEBUG    jarvis               No workflow detected, running standard pipeline
+2026-06-20T08:34:58 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:34:59 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:34:59 INFO     jarvis               LocalJarvis starting up
+2026-06-20T08:34:59 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:34:59 INFO     workflows.engine     WorkflowEngine: database ready at data/workflows.db
+2026-06-20T08:34:59 INFO     workflows.engine     WorkflowEngine [voice_command] step 1/5: listen_and_record
+2026-06-20T08:34:59 WARNING  voice.vosk_wakeword  VoskWakeWord: vosk/pyaudio not installed — returning True immediately
+2026-06-20T08:34:59 INFO     voice.hybrid_listener HybridListener: wake word detected — recording …
+2026-06-20T08:34:59 WARNING  voice.whisper_stt    WhisperSTT.record: pyaudio not installed — cannot record audio
+2026-06-20T08:34:59 WARNING  voice.push_to_talk   PushToTalk: pyaudio not installed — returning empty path
+2026-06-20T08:39:17 INFO     jarvis               LocalJarvis starting up
+2026-06-20T08:39:17 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:39:17 INFO     workflows.engine     WorkflowEngine: database ready at data/workflows.db
+2026-06-20T08:39:17 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:39:17 DEBUG    jarvis               No workflow detected, running standard pipeline
+2026-06-20T08:39:17 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:39:17 ERROR    agents.executor.executor_agent ExecutorAgent: ollama exited 1: [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K[?25h[?2026l
+Error: pull model manifest: file does not exist
+2026-06-20T08:42:31 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:42:31 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:42:31 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:42:35 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:42:35 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:43:05 ERROR    agents.executor.executor_agent ExecutorAgent: ollama timed out after 30s
+2026-06-20T08:43:05 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:43:05 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:43:05 ERROR    core.agent           router error: ValidationError — RouterAgent expects TaskPayload
+2026-06-20T08:43:05 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:43:05 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:43:05 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:43:10 WARNING  agents.executor.executor_agent Executor: step step-bad failed (ToolFailure): Unknown step action: 'nonexistent_action'
+2026-06-20T08:43:10 ERROR    agents.memory_agent.memory_agent MemoryAgent error: ValidationError — Unsupported memory operation: 'explode'
+2026-06-20T08:43:10 WARNING  agents.persona.persona_agent PersonaAgent: surfacing upstream error [ToolFailure]: tool X failed
+2026-06-20T08:43:10 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:43:10 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:43:10 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small
+2026-06-20T08:43:10 INFO     agents.router.router_agent Router: tier=large model=llama-3.1-8b confidence=0.65 rationale='coding task (write)'
+2026-06-20T08:43:10 INFO     agents.planner.planner_agent Planner: 3 step(s) for tier=large
+2026-06-20T08:43:40 ERROR    agents.executor.executor_agent ExecutorAgent: ollama timed out after 30s
+2026-06-20T08:43:41 WARNING  tools.utility.math_tool MathTool failed to evaluate 'import os; os.system('id')': Sympify of expression 'could not parse "import os; os.system('id')"' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2026-06-20T08:43:41 WARNING  tools.spotify.spotify_tool SpotifyTool: missing credentials (SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET / SPOTIFY_REFRESH_TOKEN)
+2026-06-20T08:43:41 INFO     agents.planner.planner_agent Planner: 2 step(s) for tier=small
+2026-06-20T08:45:35 INFO     jarvis               LocalJarvis starting up
+2026-06-20T08:45:35 INFO     agents.executor.executor_agent ExecutorAgent: loaded tools: ['writing', 'file_search', 'math', 'file_ops', 'research', 'calendar', 'spotify']
+2026-06-20T08:45:35 INFO     workflows.engine     WorkflowEngine: database ready at data/workflows.db
+2026-06-20T08:45:35 INFO     agents.router.router_agent Router: tier=small model=phi-3-mini confidence=0.90 rationale='simple query — no complexity keywords found'
+2026-06-20T08:45:35 DEBUG    jarvis               No workflow detected, running standard pipeline
+2026-06-20T08:45:35 INFO     agents.planner.planner_agent Planner: 1 step(s) for tier=small

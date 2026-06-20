@@ -14,9 +14,11 @@ ExecutionStatus = Literal["success", "failed"]
 ErrorType = Literal["ToolFailure", "ModelError", "Timeout", "Unknown"]
 
 ALLOWED_ROUTES: Dict[str, Set[str]] = {
+    "user": {"router"},
     "router": {"planner"},
     "planner": {"executor", "memory"},
     "executor": {"persona", "memory"},
     "persona": {"router"},
     "memory": {"router", "planner", "executor"},
+    "workflow_engine": {"router", "planner", "executor", "persona", "memory"},
 }

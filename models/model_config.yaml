@@ -1,0 +1,29 @@
+# LocalJarvis model configuration.
+#
+# Canonical source of truth for all model definitions.
+# settings.yaml references tier names; the full spec lives here.
+
+models:
+  small:
+    name: phi-3-mini
+    ollama_tag: phi3:mini
+    context_window: 4096
+    max_tokens: 1024
+    temperature: 0.7
+    description: "Fast local model for simple queries and tool dispatch."
+
+  large:
+    name: llama-3.1-8b
+    ollama_tag: llama3.1:8b
+    context_window: 128000
+    max_tokens: 4096
+    temperature: 0.7
+    description: "High-capability local model for complex reasoning and generation."
+
+# Thresholds used by models/selection_logic.py
+routing:
+  complexity_threshold: 2      # number of complex keywords required to trigger 'large' tier
+  min_confidence_simple: 0.60
+  max_confidence_simple: 0.80
+  min_confidence_complex: 0.85
+  max_confidence_complex: 0.95
